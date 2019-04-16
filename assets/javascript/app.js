@@ -16,5 +16,10 @@
  
  
 // maximum of 42 search requests an hour, 1000 search requests a day and 10 upload requests a day 
+// q: string
+// Search query term or phrase.
+
+// GIPHY search will automatically look for exact matches to queries + AND match + OR match. Explicit AND + OR boolean clauses in search queries are not supported.
+// switch the protocol in the query URL from http to https
  var apiKey = "4BxAtLQS1DBCV2uh00Cgo6U8Y4odQHu8";
  var topics = [""]
