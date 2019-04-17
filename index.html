@@ -10,10 +10,28 @@
 
 </head>
 <body>
-    <div id="app">Let's get giphy with it!</div>
+    <div id="app" class="container-fluid">
+        <h1>Get giphy with it!</h1>
+     
+
+        <!-- Rendered Buttons populate here  -->
+        <div id="buttons-view" class="p-3"></div>
+
+        <form id="topic-form">
+        <label for="topic-input">Give Me a Topic:</label>
+        <input type="text" id="topic-input">
+        <br>
+
+        <!-- Button triggers new topic to be added -->
+        <input id="add-topic" type="submit" value="Add a Topic">
+        </form>
+
+        <!-- Topics will populate here -->
+        <div id="topic-view"></div>
 
 
 
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
