@@ -30,7 +30,7 @@ $(document).ready(function() {
     
     function displayTopicGifs(){
         var topic = $(this).attr("data-topic");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=4BxAtLQS1DBCV2uh00Cgo6U8Y4odQHu8&limit=10&lang=en";
+        var queryURL = "//api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=4BxAtLQS1DBCV2uh00Cgo6U8Y4odQHu8&limit=10&lang=en?";
 
         // creating AJAX call for the actual button clicked
         $.ajax({
