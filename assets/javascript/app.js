@@ -26,7 +26,8 @@ $(document).ready(function() {
 
     // Add a click event listener to all elements with a class of "topic"
     $(document).on("click", ".topic", displayTopicGifs);
-        
+    $(document).on("click", ".gif", animate);  
+    
     function displayTopicGifs(){
         var topic = $(this).attr("data-topic");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=4BxAtLQS1DBCV2uh00Cgo6U8Y4odQHu8&limit=10&lang=en";
@@ -45,14 +46,32 @@ $(document).ready(function() {
             var topicDiv = $("<div class='topicDiv'>");
             var rating = results[i].rating;   
             var ratedP = $('<p>').text("Rated: " + rating);
-            var topicImage = $("<img>");
-            topicImage.attr("src", results[i].images.downsized_still.url);
+            var topicImage = $("<img>")
+            topicImage.addClass("gif")
+            topicImage.attr({src: results[i].images.downsized_still.url, 
+                            dataStill: results[i].images.downsized_still.url, 
+                            dataAnimate: results[i].images.downsized.url,
+                            dataState: "still"});
+
             topicDiv.append(topicImage);
             topicDiv.append(ratedP);
             $("#topic-view").prepend(topicDiv);
         }
     });
 }
+    // event listener when gif clicked animate/still
+    function animate() {
+        var state = $(this).attr("dataState");
+
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("dataAnimate"));
+            $(this).attr("dataState", "animate");
+        }else {
+            $(this).attr("src", $(this).attr("dataStill"));
+            $(this).attr("dataState", "still");
+          }
+    };
+
     // function to make buttons 
     function renderButtons(){
         // Delete buttons before adding so that we don't repeat previous buttons
@@ -76,10 +95,10 @@ $(document).ready(function() {
     $("#add-topic").on("click", function() {
         // Preventing the buttons default behavior when clicked (which is submitting a form)
         event.preventDefault();
-        // This line grabs the input from the textbox
+        // gets input from the textbox
         var topicInput = $("#topic-input").val().trim();
 
-        // Adding the topic from the textbox to our array and clear text
+        // Add topic from the textbox to our array and clear text
         topicsArray.push(topicInput);
         $("#topic-input").val("");
         // Calling renderButtons which handles the processing of our topic array
