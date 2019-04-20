@@ -19,7 +19,7 @@ $(document).ready(function() {
     // apiKey = "4BxAtLQS1DBCV2uh00Cgo6U8Y4odQHu8";
 
     //  Initial topics array
-    var topicsArray = ["Video Games", "Board Games", "Wine", "Anime", "Swimming", "Animals"];
+    var topicsArray = ["Video Games", "Board Games", "Wine", "Anime", "Swimming", "Animals", "Photography"];
 
     //  Function for displaying data
     renderButtons();
@@ -97,13 +97,15 @@ $(document).ready(function() {
         event.preventDefault();
         // gets input from the textbox
         var topicInput = $("#topic-input").val().trim();
-
+        if(!topicInput.trim()){
+            return false;
+        }else{
         // Add topic from the textbox to our array and clear text
         topicsArray.push(topicInput);
         $("#topic-input").val("");
         // Calling renderButtons which handles the processing of our topic array
         renderButtons();
-
+        };
     });
 
 });
