@@ -1,0 +1,76 @@
+html, body {
+   height: 100%;
+   margin: 0;
+   background-color: #eaa847;
+   font-family: 'Permanent Marker', cursive;
+   color: black;
+}
+#app {
+    background-image: url("../images/brain.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5rem;
+    color: black;
+    text-shadow:
+        -1px -1px 0 #ce6,  
+        1px -1px 0 #ce6,
+        -1px 1px 0 #ce6,
+        1px 1px 0 #ce6;
+
+}
+.topic {
+    margin: 3px;
+    padding: 1rem;
+    background-color: #f4e588;
+    color: #81827b;
+    font-weight: bold;
+    border-color: #81827b;
+    
+}
+.topic-input-text {
+    margin: 0;
+    padding: 1rem;
+    font-size: 24px;
+    background-color: #9945a8;
+    color: white;
+    border: 2px solid #81827b;
+   
+}
+.center {
+    margin-top: 5rem;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding: 10px;
+  }
+#add-topic {
+    font-weight: bold;
+    background-color: #9945a8;
+    border-color: #81827b;
+    color: white;
+}
+h2 {
+    font-size: 3rem;
+    color: black;;
+    text-shadow:
+        -1px -1px 0 #ce6,  
+        1px -1px 0 #ce6,
+        -1px 1px 0 #ce6,
+        1px 1px 0 #ce6;
+}
+.topicDiv {
+    display: inline-block;
+}
+.gif {
+    margin: 1rem;
+    padding: 1rem;
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+}

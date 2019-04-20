@@ -19,7 +19,7 @@ $(document).ready(function() {
     // apiKey = "4BxAtLQS1DBCV2uh00Cgo6U8Y4odQHu8";
 
     //  Initial topics array
-    var topicsArray = ["Video Games", "Board Games", "Wine", "Anime", "Swimming", "Animals", "Photography"];
+    var topicsArray = ["Animals", "Anime", "Board Games", "Photography", "Swimming", "Video Games"];
 
     //  Function for displaying data
     renderButtons();
@@ -28,6 +28,7 @@ $(document).ready(function() {
     $(document).on("click", ".topic", displayTopicGifs);
     $(document).on("click", ".gif", animate);  
     
+
     function displayTopicGifs(){
         var topic = $(this).attr("data-topic");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=4BxAtLQS1DBCV2uh00Cgo6U8Y4odQHu8&limit=10&lang=en?";
@@ -46,8 +47,8 @@ $(document).ready(function() {
             var topicDiv = $("<div class='topicDiv'>");
             var rating = results[i].rating;   
             var ratedP = $('<p>').text("Rated: " + rating);
-            var topicImage = $("<img>")
-            topicImage.addClass("gif")
+            var topicImage = $("<img>");
+            topicImage.addClass("gif");
             topicImage.attr({src: results[i].images.downsized_still.url, 
                             dataStill: results[i].images.downsized_still.url, 
                             dataAnimate: results[i].images.downsized.url,
@@ -57,6 +58,7 @@ $(document).ready(function() {
             topicDiv.append(ratedP);
             $("#topic-view").prepend(topicDiv);
         }
+        
     });
 }
     // event listener when gif clicked animate/still
@@ -70,8 +72,9 @@ $(document).ready(function() {
             $(this).attr("src", $(this).attr("dataStill"));
             $(this).attr("dataState", "still");
           }
+          
     };
-
+    
     // function to make buttons 
     function renderButtons(){
         // Delete buttons before adding so that we don't repeat previous buttons

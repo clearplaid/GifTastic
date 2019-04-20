@@ -5,29 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GifTastic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
 </head>
 <body>
     <div id="app" class="container-fluid">
-        <h1>Get giphy with it!</h1>
-     
+        <h1 class="text-center m-5">Get giphy with it!</h1>
 
-        <!-- Rendered Buttons populate here  -->
-        <div id="buttons-view" class="p-3"></div>
+        <div class="center container-fluid">
+            <form id="topic-form" class="row justify-content-center m-5">
+                <label for="topic-input" class="topic-input-text m-1">What's on your mind?</label>
+                <input type="text" id="topic-input" class="m-1">
 
-        <form id="topic-form">
-        <label for="topic-input">Give Me a Topic:</label>
-        <input type="text" id="topic-input">
-        <br>
+                <!-- Button triggers new topic to be added -->
+                <input id="add-topic" class="m-1" type="submit" value="Add Me">
+            </form>
+            <!-- Rendered Buttons populate here  -->
 
-        <!-- Button triggers new topic to be added -->
-        <input id="add-topic" type="submit" value="Add a Topic">
-        </form>
-
+            <div id="buttons-view" class="row justify-content-center p-3 m-5"></div>
+        </div>
+        <h2 id="topic-view-text" class="row justify-content-center m-5">Look at Me! Click at Me!</h2>
         <!-- Topics will populate here -->
-        <div id="topic-view"></div>
+        <div id="topic-view" class="gifs-here row justify-content-center"></div>
 
 
 
