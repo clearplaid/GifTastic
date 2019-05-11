@@ -1,4 +1,4 @@
-# GifTastic
+# GifTastic https://clearplaid.github.io/GifTastic/
 Dynamic web page that populates with gifs of your choice.
 Click on the topics already there or add your own to the choices.
 After adding your topics click to see the gifs.
