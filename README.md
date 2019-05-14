@@ -1,4 +1,6 @@
-# GifTastic https://clearplaid.github.io/GifTastic/
+# GifTastic 
+
+https://clearplaid.github.io/GifTastic/
 
 Dynamic web page that populates with gifs of your choice.
 
